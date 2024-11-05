@@ -1,0 +1,143 @@
+\documentclass[12pt]{report}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{times}
+\usepackage{mathptmx} % Use mathptmx instead of times
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{float}
+
+
+% Configuración de márgenes
+\geometry{
+    top=2.5cm,
+    left=3cm,
+    right=3cm,
+    bottom=2.5cm
+}
+
+% Configuración de interlineado
+\onehalfspacing
+
+% Configuración de títulos y subtítulos
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\centering}{}{0pt}{\fontsize{14}{16}\selectfont}
+\titleformat{\section}
+  {\normalfont\bfseries}{\thesection}{1em}{\fontsize{12}{14}\selectfont}
+\titleformat{\subsection}
+  {\normalfont\bfseries}{\thesubsection}{1em}{\fontsize{12}{14}\selectfont}
+
+
+% Configuración de pie de página
+  \fancyhf{}
+\fancyfoot[R]{\thepage}
+\pagestyle{fancy}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[R]{\thepage}
+}
+
+  \begin{document}
+  \pagenumbering{roman}
+%----- PORTADA ----
+\setlength{\hoffset}{27 pt} % 1 (Para centrar más la portada)
+\begin{titlepage}
+{\centering
+{\fontfamily{ptm}\scshape\bfseries\fontsize{29.16}{34.992}\selectfont Universidad de Guadalajara \par}
+\vspace{0.5cm}
+{\scshape\Large Centro Universitario de los Lagos \par}
+\vspace{1cm}
+{\scshape\Large División de Estudios de la Biodiversidad e innovación Tecnológica \par}
+\vspace{1cm}
+{\graphicspath{{imagenes/Portada}} %ruta de las imagenes
+\includegraphics[width=0.3\textwidth]{image.png}\par}
+\vspace{1cm}
+% Título
+{\scshape\large\bfseries Soldadura de los componentes en el PCB \par}
+\vspace{1.5cm}
+% Materia
+{\large \textbf{Asignatura:} \\Diseño Electronico Asistido por Computadora\par}
+\vfill
+% Estudiante
+{\large \textbf{Presenta:} \\Oscar Iván Moreno Gutiérrez \#220942754\par}
+\vfill
+% Profesor
+{\large \textbf{Profesor:} \\Mtro. Jaime Eduardo Pons Arenas \par}
+\vfill
+\vfill
+% Fecha
+\begin{flushright}
+  {\normalsize \textbf {Fecha:} \\ \today}
+\end{flushright}
+\vfill}
+{\large  \par}
+\end{titlepage}
+%----- FIN DE PORTADA ----
+
+%----- ÍNDICE GENERAL ----
+\tableofcontents
+\newpage
+
+
+
+%----- OBJETIVO ----
+\chapter*{Objetivo}
+\addcontentsline{toc}{chapter}{Objetivo}
+Soldar los componentes en la placa de PCB para poder realizar las conexiones eléctricas necesarias para el funcionamiento del circuito.
+\newpage
+
+%----- CONTENIDO ----
+\chapter{Contenido}
+\section{Materiales}
+\begin{itemize}
+    \item Placa de PCB con diseño en cobre y perforaciones
+    \item Cautin
+    \item Soldadura
+    \item Pasta para soldar
+    \item Desoldador de Succion
+    \item 3 Resistencias de 220 Ohms
+    \item 2 resistencias de 100k Ohms
+    \item 3 LEDs (Rojo, Verde y Amarillo)
+    \item 1 Fotoresistor
+    \item 8 PinHeaders
+\end{itemize}
+\section{Pasos a seguir}
+\begin{enumerate}
+  \item Vemos la placa con el diseño de las conexiones.
+  \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.8\textwidth]{screenshots/Objetivo.png}
+      \caption{Render 3D del PCB}
+      \label{fig:placaConDiseno}
+  \end{figure}
+  \item Se diseño un Ojo para poner los leds y el Fotoresistor adentro.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{screenshots/PiezaNegra.png}
+    \caption{Ojo Render 3D}
+    \label{fig:ojos}
+  \end{figure}
+  \item Soldado los componentes en la placa.
+  \item Listo, tenemos el PCB con los componentes soldados.
+  \begin{figure}[H]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{screenshots/PlacaArriba.jpeg}
+      \caption{Vista de arriba}
+      \label{fig:imagen1}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{screenshots/PlacaAbajo.jpeg}
+      \caption{Vista de abajo}
+      \label{fig:imagen2}
+    \end{minipage}
+  \end{figure}
+\end{enumerate}
+\newpage
+\end{document}
